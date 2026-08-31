@@ -11,7 +11,12 @@ export default function Footer() {
           <div className="col-12 col-lg-5">
             <div className="d-flex align-items-center gap-2 mb-3">
               <div className="bg-white p-1 rounded" style={{ display: 'inline-block' }}>
-                
+                <img 
+                  src="/images/bps-tangerang-logo.png" 
+                  alt="Logo BPS Kota Tangerang" 
+                  style={{ height: '36px', width: 'auto' }}
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
               </div>
               <div>
                 <h6 className="mb-0 text-white fw-bold">{SITE_CONFIG.agencyName}</h6>
