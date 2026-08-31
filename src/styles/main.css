@@ -1,0 +1,472 @@
+/* ==========================================================================
+   PORTAL INFORMASI DTSEN — BPS KOTA TANGERANG
+   Desain Sistem & Refinement Visual (Berbasis Bootstrap 5)
+   ========================================================================== */
+
+/* 1. Custom Properties (Design Tokens) */
+:root {
+  --bps-blue-900: #0a2f6c;
+  --bps-blue: #0d47a1;
+  --bps-blue-700: #1565c0;
+  --bps-blue-50: #ebf3fc;
+  --bps-blue-100: #dbeafe;
+
+  --bps-green: #16a34a;
+  --bps-green-700: #15803d;
+  --bps-green-50: #f0fdf4;
+  --bps-green-100: #dcfce7;
+
+  --bps-orange: #d97706;
+  --bps-orange-500: #f59e0b;
+  --bps-orange-50: #fffbeb;
+
+  --neutral-bg: #f8fafc;
+  --neutral-surface: #ffffff;
+  --neutral-border: #e2e8f0;
+  --neutral-text-main: #0f172a;
+  --neutral-text-body: #334155;
+  --neutral-text-muted: #64748b;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+/* 2. Global Resets & Typography */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--neutral-bg);
+  color: var(--neutral-text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--neutral-text-main);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Focus Visible State untuk Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.accordion-button:focus-visible {
+  outline: 3px solid #38bdf8 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.25) !important;
+}
+
+/* 3. Header & Navbar */
+.bps-navbar {
+  background-color: var(--neutral-surface);
+  border-bottom: 1px solid var(--neutral-border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.bps-brand-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.bps-brand-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--bps-blue);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.bps-brand-subtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--neutral-text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--neutral-text-body) !important;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: var(--radius-sm);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--bps-blue) !important;
+  background-color: var(--bps-blue-50);
+}
+
+/* 4. Buttons */
+.btn-bps-primary {
+  background-color: var(--bps-blue);
+  border-color: var(--bps-blue);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-bps-primary:hover {
+  background-color: var(--bps-blue-700);
+  border-color: var(--bps-blue-700);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-bps-secondary {
+  background-color: var(--neutral-surface);
+  border: 1.5px solid var(--bps-green);
+  color: var(--bps-green-700);
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-bps-secondary:hover {
+  background-color: var(--bps-green-50);
+  border-color: var(--bps-green-700);
+  color: var(--bps-green-700);
+  transform: translateY(-1px);
+}
+
+.btn-bps-orange {
+  background-color: var(--bps-orange);
+  border-color: var(--bps-orange);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-bps-orange:hover {
+  background-color: #b45309;
+  border-color: #b45309;
+  color: #ffffff;
+}
+
+/* 5. Hero Section */
+.hero-section {
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--neutral-border);
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--bps-blue-900);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.hero-lead {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--neutral-text-body);
+  line-height: 1.6;
+}
+
+.hero-img-container {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(13, 71, 161, 0.08));
+}
+
+/* 6. Trust Strip / Quick Benefits */
+.trust-strip {
+  background-color: var(--neutral-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neutral-border);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.5rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.trust-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+/* 7. Section Standards */
+.section-wrapper {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  font-weight: 800;
+  color: var(--bps-blue-900);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--neutral-text-muted);
+  max-width: 680px;
+}
+
+/* 8. Cards */
+.bps-card {
+  background-color: var(--neutral-surface);
+  border: 1px solid var(--neutral-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.bps-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-md);
+}
+
+.icon-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+/* 9. Desil Scale Visual */
+.desil-scale-container {
+  background-color: var(--neutral-surface);
+  border: 1px solid var(--neutral-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.desil-bar-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.desil-bar-item:hover {
+  transform: translateY(-2px);
+}
+
+.desil-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin: 0 auto 0.4rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.desil-circle.active {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.35);
+}
+
+/* 10. Update Channels Cards */
+.channel-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--neutral-surface);
+  border: 1.5px solid var(--neutral-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.channel-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #93c5fd;
+}
+
+.channel-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 11. FAQ Accordion Styling */
+.bps-faq-accordion .accordion-item {
+  border: 1px solid var(--neutral-border);
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--neutral-surface);
+}
+
+.bps-faq-accordion .accordion-button {
+  font-weight: 700;
+  color: var(--bps-blue-900);
+  background-color: var(--neutral-surface);
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+}
+
+.bps-faq-accordion .accordion-button:not(.collapsed) {
+  color: var(--bps-blue);
+  background-color: var(--bps-blue-50);
+  box-shadow: none;
+}
+
+.bps-faq-accordion .accordion-body {
+  padding: 1.15rem 1.25rem;
+  color: var(--neutral-text-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  background-color: var(--neutral-surface);
+}
+
+/* 12. Quick Access Navigator */
+.quick-access-card {
+  background-color: var(--neutral-surface);
+  border: 1px solid var(--neutral-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--neutral-text-main);
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.quick-access-card:hover {
+  background-color: var(--bps-blue-50);
+  border-color: #bfdbfe;
+  color: var(--bps-blue);
+  transform: translateY(-2px);
+}
+
+/* 13. Footer */
+.bps-footer {
+  background-color: #0b1f3f;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--bps-blue);
+}
+
+.bps-footer h6 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bps-footer a {
+  color: #94a3b8;
+  transition: color 0.15s ease;
+}
+
+.bps-footer a:hover {
+  color: #ffffff;
+}
+
+.bps-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* 14. Responsive Rules */
+@media (max-width: 767.98px) {
+  .section-wrapper {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+  
+  .hero-section {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .trust-strip {
+    padding: 1rem;
+  }
+
+  .trust-item {
+    padding: 0.5rem 0;
+  }
+
+  .trust-item:not(:last-child) {
+    border-bottom: 1px solid var(--neutral-border);
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-bps-primary,
+  .btn-bps-secondary,
+  .btn-bps-orange {
+    width: 100%;
+    justify-content: center;
+  }
+}
