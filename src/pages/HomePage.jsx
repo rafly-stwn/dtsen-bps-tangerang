@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import QuickAccessNav from '../components/QuickAccessNav';
@@ -9,12 +9,18 @@ import DtsenBansos from '../components/DtsenBansos';
 import PembaruanData from '../components/PembaruanData';
 import FaqSection from '../components/FaqSection';
 import Footer from '../components/Footer';
+import LayananDtsenModal from '../components/LayananDtsenModal';
 
 export default function HomePage() {
+  const [isLayananModalOpen, setIsLayananModalOpen] = useState(false);
+
+  const openLayananModal = () => setIsLayananModalOpen(true);
+  const closeLayananModal = () => setIsLayananModalOpen(false);
+
   return (
     <div className="d-flex flex-column min-vh-100">
       {/* 1. Header & Navigation */}
-      <Header />
+      <Header onOpenLayananModal={openLayananModal} />
 
       <main id="main-content" tabIndex="-1">
         {/* 2. Hero Section + Trust Strip */}
@@ -44,6 +50,12 @@ export default function HomePage() {
 
       {/* 10. Footer & Official Links */}
       <Footer />
+
+      {/* 11. Modal Layanan DTSEN (Pilihan Warga vs Instansi) */}
+      <LayananDtsenModal
+        isOpen={isLayananModalOpen}
+        onClose={closeLayananModal}
+      />
     </div>
   );
 }

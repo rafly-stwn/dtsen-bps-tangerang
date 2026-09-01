@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import { SITE_CONFIG } from '../data/config';
 import { NAV_LINKS } from '../data/navigation';
 
-export default function Header() {
+export default function Header({ onOpenLayananModal }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const closeNav = () => setIsNavOpen(false);
+
+  const handleLayananClick = () => {
+    closeNav();
+    if (onOpenLayananModal) {
+      onOpenLayananModal();
+    }
+  };
 
   return (
     <header className="sticky-top">
@@ -57,16 +64,17 @@ export default function Header() {
               ))}
             </ul>
 
-            {/* Header Action Button */}
+            {/* Header Action Button: Layanan DTSEN */}
             <div className="d-flex align-items-center pt-2 pt-lg-0">
-              <a 
-                href="#pembaruan-data" 
+              <button 
+                type="button"
                 className="btn btn-bps-primary w-100 w-lg-auto text-center"
-                onClick={closeNav}
+                onClick={handleLayananClick}
+                aria-label="Buka pilihan Layanan DTSEN"
               >
-                <i className="bi bi-arrow-repeat"></i>
-                <span>Perbarui Data</span>
-              </a>
+                <i className="bi bi-grid-fill"></i>
+                <span>Layanan DTSEN</span>
+              </button>
             </div>
           </div>
         </div>

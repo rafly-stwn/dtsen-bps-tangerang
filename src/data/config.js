@@ -12,7 +12,17 @@ export const SITE_CONFIG = {
 };
 
 export const EXTERNAL_LINKS = {
-  // Kanal Resmi Pembaruan Data
+  // Portal Resmi Permohonan / Akses Data DTSEN (Satu Data Indonesia)
+  dtsenPortal: {
+    id: 'dtsen-portal',
+    label: 'Portal Permohonan Data DTSEN',
+    url: 'https://dtsen.data.go.id',
+    displayUrl: 'dtsen.data.go.id',
+    badge: 'Portal Satu Data',
+    description: 'Layanan resmi pengajuan permohonan dan akses dataset DTSEN bagi instansi pemerintah, lembaga, dan akademisi.',
+    isExternal: true,
+  },
+  // Kanal Resmi Pembaruan Data Masyarakat
   formBps: {
     id: 'form-bps',
     label: 'Buka Form BPS',

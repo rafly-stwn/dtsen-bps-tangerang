@@ -1,6 +1,6 @@
 import React from 'react';
 import { SITE_CONFIG, EXTERNAL_LINKS } from '../data/config';
-import { NAV_LINKS } from '../data/navigation';
+import { FOOTER_NAV_LINKS } from '../data/navigation';
 
 export default function Footer() {
   return (
@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="col-6 col-lg-3">
             <h6>Navigasi Halaman</h6>
             <ul className="list-unstyled d-flex flex-column gap-2 small">
-              {NAV_LINKS.map((link) => (
+              {FOOTER_NAV_LINKS.map((link) => (
                 <li key={link.id}>
                   <a href={link.href} className="text-decoration-none">
                     <i className="bi bi-chevron-right me-1 small"></i>
@@ -59,6 +59,16 @@ export default function Footer() {
           <div className="col-6 col-lg-4">
             <h6>Kanal & Tautan Resmi</h6>
             <ul className="list-unstyled d-flex flex-column gap-2 small">
+              <li>
+                <a
+                  href={EXTERNAL_LINKS.dtsenPortal.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none text-info fw-semibold"
+                >
+                  Portal Permohonan Data DTSEN ↗
+                </a>
+              </li>
               <li>
                 <a
                   href={EXTERNAL_LINKS.formBps.url}
