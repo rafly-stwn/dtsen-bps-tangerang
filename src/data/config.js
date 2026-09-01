@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   agencyName: 'BPS Kota Tangerang',
   agencyFullName: 'Badan Pusat Statistik Kota Tangerang',
   tagline: 'Kenali DTSEN, Pastikan Data Anda Akurat',
-  address: 'Jl. TMP Taruna No. 27, Sukaasih, Kec. Tangerang, Kota Tangerang, Banten 15111',
+  address: 'Jl. RHM Noer Radji No. 28, Gerendeng, Kecamatan Tangerang, Kota Tangerang, Banten 15113',
   email: 'bps3671@bps.go.id',
   website: 'https://tangerangkota.bps.go.id',
 };
