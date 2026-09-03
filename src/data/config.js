@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   agencyName: 'BPS Kota Tangerang',
   agencyFullName: 'Badan Pusat Statistik Kota Tangerang',
   programName: 'Rencana Aksi Insan Statistik Teladan (IST) 2026',
-  address: 'Jl. TMP Taruna No. 27, Sukaasih, Kec. Tangerang, Kota Tangerang, Banten 15111',
+  address: 'Jl. RHM Noeradji No.29, RT.003/RW.001, Gerendeng, Kec. Karawaci, Kota Tangerang, Banten 15113',
   email: 'bps3671@bps.go.id',
   website: 'https://tangerangkota.bps.go.id',
 };
