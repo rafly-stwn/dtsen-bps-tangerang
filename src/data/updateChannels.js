@@ -20,8 +20,6 @@ export const UPDATE_DATA_CONTENT = {
       actionType: 'internal',
       ctaLabel: 'Lihat Petunjuk SIKS-NG ↓',
       targetHref: '#checklist-persiapan',
-      badge: 'Fasilitasi Desa/Kelurahan',
-      badgeClass: 'bg-primary text-white',
       accentColor: '#16A34A',
       icon: 'bi-building-fill-check',
       isExternal: false,
@@ -40,8 +38,6 @@ export const UPDATE_DATA_CONTENT = {
       actionType: 'external',
       ctaLabel: 'Buka Cek Bansos ↗',
       targetHref: EXTERNAL_LINKS.cekBansos.url,
-      badge: 'Aplikasi Mandiri',
-      badgeClass: 'bg-info text-dark',
       accentColor: '#0284C7',
       icon: 'bi-phone-fill',
       isExternal: true,
@@ -60,14 +56,11 @@ export const UPDATE_DATA_CONTENT = {
       actionType: 'external',
       ctaLabel: 'Buka Form BPS ↗',
       targetHref: EXTERNAL_LINKS.formBps.url,
-      displayUrl: EXTERNAL_LINKS.formBps.displayUrl,
-      badge: 'Portal Resmi BPS',
-      badgeClass: 'bg-warning text-dark',
       accentColor: '#D97706',
       icon: 'bi-laptop-fill',
       isExternal: true,
       details: [
-        'Kunjungi tautan resmi: dtsen-form.bps.go.id.',
+        'Kunjungi formulir daring resmi BPS.',
         'Baca petunjuk pengisian dan daftar berkas yang disyaratkan.',
         'Isi data perubahan secara teliti sesuai kondisi nyata saat ini.'
       ]

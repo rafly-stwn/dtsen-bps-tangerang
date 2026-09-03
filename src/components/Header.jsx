@@ -25,14 +25,14 @@ export default function Header({ onOpenLayananModal }) {
               src="/images/bps-tangerang-logo.png" 
               alt="Logo BPS Kota Tangerang" 
               className="bps-brand-logo"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling.style.display = 'block';
-              }}
             />
-            <div className="d-none" style={{ lineHeight: 1.1 }}>
-              <span className="bps-brand-title d-block">{SITE_CONFIG.agencyName}</span>
-              <span className="bps-brand-subtitle d-block">{SITE_CONFIG.agencyFullName}</span>
+            <div className="d-flex flex-column justify-content-center border-start ps-2 ms-1" style={{ lineHeight: 1.15 }}>
+              <span className="fw-bold text-primary" style={{ fontSize: '1.15rem', letterSpacing: '-0.02em', fontWeight: 800 }}>
+                {SITE_CONFIG.appName}
+              </span>
+              <span className="text-muted" style={{ fontSize: '0.68rem', fontWeight: 600 }}>
+                {SITE_CONFIG.agencyName}
+              </span>
             </div>
           </a>
 

@@ -1,8 +1,8 @@
 // Konten Edukasi DTSEN (Berdasarkan Sumber Resmi BPS & Infografis Acuan)
 
 export const HERO_CONTENT = {
-  headline: 'Kenali DTSEN, Pastikan Data Anda Akurat',
-  subheadline: 'DTSEN adalah basis data tunggal individu dan/atau keluarga yang memuat kondisi sosial ekonomi penduduk Indonesia.',
+  headline: 'Kenali DTSEN+, Pastikan Data Anda Akurat',
+  subheadline: 'DTSEN+ “DTSEN DALAM GENGGAMAN” adalah basis data tunggal individu dan/atau keluarga yang memuat kondisi sosial ekonomi penduduk Indonesia.',
   primaryCta: {
     label: 'Apa itu DTSEN? →',
     targetHref: '#tentang-dtsen',

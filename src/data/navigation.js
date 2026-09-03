@@ -1,9 +1,13 @@
 // Data Navigasi Header & Footer
 
 export const NAV_LINKS = [
+  { id: 'beranda', label: 'Beranda', href: '#beranda' },
   { id: 'tentang', label: 'Tentang DTSEN', href: '#tentang-dtsen' },
   { id: 'variabel', label: 'Variabel Data', href: '#variabel-dtsen' },
-  { id: 'desil-bansos', label: 'Desil & Bansos', href: '#memahami-desil' },
+  { id: 'desil', label: 'Desil', href: '#memahami-desil' },
+  { id: 'bansos', label: 'DTSEN & Bansos', href: '#dtsen-bansos' },
+  { id: 'pembaruan', label: 'Pembaruan Data', href: '#pembaruan-data' },
+  { id: 'faq', label: 'FAQ', href: '#faq' },
 ];
 
 export const FOOTER_NAV_LINKS = [

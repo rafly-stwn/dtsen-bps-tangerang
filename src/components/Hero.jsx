@@ -1,5 +1,6 @@
 import React from 'react';
 import { HERO_CONTENT, TRUST_BENEFITS } from '../data/dtsenContent';
+import { SITE_CONFIG } from '../data/config';
 
 export default function Hero() {
   return (
@@ -9,17 +10,21 @@ export default function Hero() {
           {/* Left Column: Headline, Definition, CTAs */}
           <div className="col-12 col-lg-7 text-center text-lg-start">
             <div className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill bg-white border shadow-sm">
-              <span className="badge bg-primary text-white px-2 py-1 rounded">BPS Kota Tangerang</span>
-              <span className="small text-muted fw-semibold">Layanan Informasi Publik</span>
+              <span className="badge bg-primary text-white px-2 py-1 rounded">{SITE_CONFIG.agencyName}</span>
+              <span className="small text-muted fw-semibold">Rencana Aksi IST 2026</span>
             </div>
 
-            <h1 id="hero-heading" className="hero-title mb-3">
-              Kenali DTSEN,<br />
+            <h1 id="hero-heading" className="hero-title mb-2">
+              Kenali <span className="text-primary">{SITE_CONFIG.appName}</span>,<br />
               <span className="text-primary">Pastikan Data Anda Akurat</span>
             </h1>
 
+            <p className="fw-bold text-primary mb-3" style={{ letterSpacing: '0.04em', fontSize: '1.05rem' }}>
+              “{SITE_CONFIG.appSubtitle}” <span className="text-muted fw-normal d-none d-sm-inline">— {SITE_CONFIG.tagline}</span>
+            </p>
+
             <p className="hero-lead mb-4">
-              DTSEN adalah basis data tunggal individu dan/atau keluarga yang memuat kondisi{' '}
+              <strong>{SITE_CONFIG.appName}</strong> adalah basis data tunggal individu dan/atau keluarga yang memuat kondisi{' '}
               <strong className="text-success">sosial ekonomi</strong> penduduk Indonesia.
             </p>
 

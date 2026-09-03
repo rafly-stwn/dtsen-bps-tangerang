@@ -51,12 +51,7 @@ export default function PembaruanData() {
 
                       {/* Content & Action */}
                       <div className="flex-grow-1">
-                        <div className="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-1">
-                          <h5 className="fw-bold mb-0 text-dark fs-6">{channel.title}</h5>
-                          <span className={`badge ${channel.badgeClass} small`}>
-                            {channel.badge}
-                          </span>
-                        </div>
+                        <h5 className="fw-bold mb-1 text-dark fs-6">{channel.title}</h5>
                         
                         <p className="small text-primary fw-semibold mb-2">
                           {channel.subtitle}
@@ -66,7 +61,7 @@ export default function PembaruanData() {
                           {channel.description}
                         </p>
 
-                        <div className="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2 border-top">
+                        <div className="pt-2 border-top">
                           {channel.isExternal ? (
                             <a
                               href={channel.targetHref}
@@ -84,12 +79,6 @@ export default function PembaruanData() {
                             >
                               <span>{channel.ctaLabel}</span>
                             </a>
-                          )}
-
-                          {channel.displayUrl && (
-                            <span className="small text-muted font-monospace">
-                              {channel.displayUrl}
-                            </span>
                           )}
                         </div>
                       </div>
