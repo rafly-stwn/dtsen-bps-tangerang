@@ -1,5 +1,6 @@
 import React from 'react';
 import { ABOUT_DTSEN } from '../data/dtsenContent';
+import { scrollToSection } from '../utils/scroll';
 
 export default function ApaItuDtsen() {
   return (
@@ -25,10 +26,18 @@ export default function ApaItuDtsen() {
             </div>
 
             <div className="d-flex flex-wrap gap-2 pt-2">
-              <a href="#variabel-dtsen" className="btn btn-bps-primary">
+              <a 
+                href="#variabel-dtsen" 
+                className="btn btn-bps-primary"
+                onClick={(e) => scrollToSection(e, '#variabel-dtsen')}
+              >
                 <span>Lihat 7 Variabel Data →</span>
               </a>
-              <a href="#memahami-desil" className="btn btn-outline-secondary fw-bold px-3 py-2">
+              <a 
+                href="#memahami-desil" 
+                className="btn btn-outline-secondary fw-bold px-3 py-2"
+                onClick={(e) => scrollToSection(e, '#memahami-desil')}
+              >
                 <span>Pelajari Desil →</span>
               </a>
             </div>

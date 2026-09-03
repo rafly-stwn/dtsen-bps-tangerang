@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FAQ_DATA } from '../data/faq';
+import { scrollToSection } from '../utils/scroll';
 
 export default function FaqSection() {
   const [openFaqId, setOpenFaqId] = useState('faq-1');
@@ -68,7 +69,11 @@ export default function FaqSection() {
                   Kunjungi kantor BPS Kota Tangerang atau konsultasikan dengan aparat kelurahan setempat.
                 </p>
               </div>
-              <a href="#pembaruan-data" className="btn btn-sm btn-bps-primary flex-shrink-0">
+              <a 
+                href="#pembaruan-data" 
+                className="btn btn-sm btn-bps-primary flex-shrink-0"
+                onClick={(e) => scrollToSection(e, '#pembaruan-data')}
+              >
                 <span>Lihat Panduan Pembaruan →</span>
               </a>
             </div>

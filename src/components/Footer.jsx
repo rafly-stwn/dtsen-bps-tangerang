@@ -1,6 +1,7 @@
 import React from 'react';
 import { SITE_CONFIG, EXTERNAL_LINKS } from '../data/config';
 import { FOOTER_NAV_LINKS } from '../data/navigation';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Footer() {
   return (
@@ -46,7 +47,11 @@ export default function Footer() {
             <ul className="list-unstyled d-flex flex-column gap-2 small">
               {FOOTER_NAV_LINKS.map((link) => (
                 <li key={link.id}>
-                  <a href={link.href} className="text-decoration-none">
+                  <a 
+                    href={link.href} 
+                    className="text-decoration-none"
+                    onClick={(e) => scrollToSection(e, link.href)}
+                  >
                     <i className="bi bi-chevron-right me-1 small"></i>
                     {link.label}
                   </a>

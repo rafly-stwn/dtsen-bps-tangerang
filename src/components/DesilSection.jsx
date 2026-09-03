@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DESIL_CONTENT, DESIL_SCALE, DESIL_KEY_FACTS } from '../data/desil';
+import { scrollToSection } from '../utils/scroll';
 
 export default function DesilSection() {
   const [selectedDesil, setSelectedDesil] = useState(1);
@@ -94,7 +95,11 @@ export default function DesilSection() {
               </div>
               <div className="col-12 col-md-4 text-md-end">
                 <span className="small text-muted d-block mb-2">Ingin tahu hubungan desil & bansos?</span>
-                <a href="#dtsen-bansos" className="btn btn-sm btn-bps-primary">
+                <a 
+                  href="#dtsen-bansos" 
+                  className="btn btn-sm btn-bps-primary"
+                  onClick={(e) => scrollToSection(e, '#dtsen-bansos')}
+                >
                   <span>Lihat Hubungan Bansos →</span>
                 </a>
               </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { QUICK_ACCESS_ITEMS } from '../data/navigation';
+import { scrollToSection } from '../utils/scroll';
 
 export default function QuickAccessNav() {
   return (
@@ -15,7 +16,11 @@ export default function QuickAccessNav() {
         <div className="row g-2 g-md-3">
           {QUICK_ACCESS_ITEMS.map((item) => (
             <div className="col-6 col-md-4 col-lg" key={item.id}>
-              <a href={item.targetHref} className="quick-access-card h-100">
+              <a 
+                href={item.targetHref} 
+                className="quick-access-card h-100"
+                onClick={(e) => scrollToSection(e, item.targetHref)}
+              >
                 <i className={`bi ${item.icon} fs-4 text-${item.badgeColor}`}></i>
                 <div>
                   <span className="d-block fw-bold small text-dark">{item.title}</span>

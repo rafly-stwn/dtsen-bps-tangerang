@@ -1,6 +1,7 @@
 import React from 'react';
 import { HERO_CONTENT, TRUST_BENEFITS } from '../data/dtsenContent';
 import { SITE_CONFIG } from '../data/config';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Hero() {
   return (
@@ -30,10 +31,18 @@ export default function Hero() {
 
             {/* Action Buttons */}
             <div className="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 justify-content-center justify-content-lg-start mb-4">
-              <a href={HERO_CONTENT.primaryCta.targetHref} className="btn btn-bps-primary">
+              <a 
+                href={HERO_CONTENT.primaryCta.targetHref} 
+                className="btn btn-bps-primary"
+                onClick={(e) => scrollToSection(e, HERO_CONTENT.primaryCta.targetHref)}
+              >
                 <span>{HERO_CONTENT.primaryCta.label}</span>
               </a>
-              <a href={HERO_CONTENT.secondaryCta.targetHref} className="btn btn-bps-secondary">
+              <a 
+                href={HERO_CONTENT.secondaryCta.targetHref} 
+                className="btn btn-bps-secondary"
+                onClick={(e) => scrollToSection(e, HERO_CONTENT.secondaryCta.targetHref)}
+              >
                 <span>{HERO_CONTENT.secondaryCta.label}</span>
               </a>
             </div>

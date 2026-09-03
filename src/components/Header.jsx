@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { SITE_CONFIG } from '../data/config';
 import { NAV_LINKS } from '../data/navigation';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Header({ onOpenLayananModal }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const closeNav = () => setIsNavOpen(false);
+
+  const handleNavClick = (e, href) => {
+    closeNav();
+    scrollToSection(e, href);
+  };
 
   const handleLayananClick = () => {
     closeNav();
@@ -20,7 +26,11 @@ export default function Header({ onOpenLayananModal }) {
       <nav className="navbar navbar-expand-lg bps-navbar py-2" aria-label="Navigasi Utama">
         <div className="container">
           {/* Logo & Brand Identity */}
-          <a className="navbar-brand d-flex align-items-center gap-2" href="#beranda" onClick={closeNav}>
+          <a 
+            className="navbar-brand d-flex align-items-center gap-2" 
+            href="#beranda" 
+            onClick={(e) => handleNavClick(e, '#beranda')}
+          >
             <img 
               src="/images/bps-tangerang-logo.png" 
               alt="Logo BPS Kota Tangerang" 
@@ -56,7 +66,7 @@ export default function Header({ onOpenLayananModal }) {
                   <a 
                     className="nav-link" 
                     href={link.href}
-                    onClick={closeNav}
+                    onClick={(e) => handleNavClick(e, link.href)}
                   >
                     {link.label}
                   </a>
