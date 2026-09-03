@@ -292,17 +292,27 @@ input:focus-visible,
   border: 1px solid var(--neutral-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
+  overflow: hidden;
 }
 
 .desil-bar-item {
   flex: 1;
   text-align: center;
   cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  padding: 8px 3px 4px !important;
   transition: transform 0.15s ease;
 }
 
-.desil-bar-item:hover {
+.desil-bar-item:hover .desil-circle:not(.active) {
   transform: translateY(-2px);
+}
+
+.desil-bar-item:focus,
+.desil-bar-item:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .desil-circle {
@@ -315,14 +325,14 @@ input:focus-visible,
   color: #ffffff;
   font-weight: 800;
   font-size: 0.95rem;
-  margin: 0 auto 0.4rem;
+  margin: 6px auto 0.4rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
 }
 
 .desil-circle.active {
-  transform: scale(1.15);
-  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.35);
+  transform: scale(1.18);
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px rgba(13, 71, 161, 0.45), 0 4px 10px rgba(0,0,0,0.18);
 }
 
 /* 10. Update Channels Cards */
@@ -468,5 +478,9 @@ input:focus-visible,
   .btn-bps-orange {
     width: 100%;
     justify-content: center;
+  }
+
+  .desil-scale-container {
+    padding: 1.15rem 0.85rem;
   }
 }

@@ -33,25 +33,27 @@ export default function DesilSection() {
 
         {/* Desil Scale Interactive Visual */}
         <div className="desil-scale-container mb-4">
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            <span className="badge bg-danger-subtle text-danger fw-bold px-3 py-1">
-              <i className="bi bi-arrow-left me-1"></i> Kesejahteraan Relatif Rendah
+          {/* Responsive Badges: Compact on mobile, full on tablet/desktop */}
+          <div className="d-flex justify-content-between align-items-center gap-2 mb-3">
+            <span className="badge bg-danger-subtle text-danger fw-bold px-2 px-sm-3 py-1">
+              <i className="bi bi-arrow-left me-1"></i>
+              <span className="d-none d-md-inline">Kesejahteraan </span>Relatif Rendah
             </span>
-            <span className="badge bg-success-subtle text-success fw-bold px-3 py-1">
-              Kesejahteraan Relatif Tinggi <i className="bi bi-arrow-right ms-1"></i>
+            <span className="badge bg-success-subtle text-success fw-bold px-2 px-sm-3 py-1">
+              <span className="d-none d-md-inline">Kesejahteraan </span>Relatif Tinggi <i className="bi bi-arrow-right ms-1"></i>
             </span>
           </div>
 
-          {/* Scale 1-10 Bar (Scrollable on small mobile) */}
-          <div className="overflow-x-auto pb-2 mb-3">
-            <div className="d-flex align-items-center justify-content-between text-center" style={{ minWidth: '340px' }}>
+          {/* Scale 1-10 Bar with ample headroom (pt-3 pb-2) to avoid clipping active scaled circles */}
+          <div className="overflow-x-auto pt-3 pb-2 mb-3" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <div className="d-flex align-items-center justify-content-between text-center py-2" style={{ minWidth: '360px' }}>
               {DESIL_SCALE.map((item) => {
                 const isActive = selectedDesil === item.level;
                 return (
                   <button
                     key={item.level}
                     type="button"
-                    className="btn p-1 border-0 desil-bar-item focus-ring"
+                    className="btn p-1 border-0 desil-bar-item"
                     onClick={() => setSelectedDesil(item.level)}
                     aria-label={`Pilih ${item.label}: ${item.category}`}
                     aria-pressed={isActive}
